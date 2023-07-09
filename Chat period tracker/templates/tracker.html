@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Period Tracker</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Period Tracker</h1>
+    {% if date %}
+        <p>Your last period started on {{ date }}</p>
+    {% endif %}
+</body>
+</html>

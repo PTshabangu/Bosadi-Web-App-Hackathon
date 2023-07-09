@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Period Tracker</h1>
+    <div id="calendar">
+        <!-- Display the next month's probable period starting date -->
+        <p>Next period: {{ next_period_date }}</p>
+    </div>
+    <a href="/history">View History</a>
+</body>
+</html>

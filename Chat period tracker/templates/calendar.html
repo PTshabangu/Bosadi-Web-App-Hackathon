@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Period Calendar</h1>
+<h2>{{ calendar_view.month_name[current_month] }} {{ current_year }}</h2>
+<table>
+  <tr>
+    <th>Mon</th>
+    <th>Tue</th>
+    <th>Wed</th>
+    <th>Thu</th>
+    <th>Fri</th>
+    <th>Sat</th>
+    <th>Sun</th>
+  </tr>
+  {% for week in cal %}
+  <tr>
+    {% for day in week %}
+    {% if day == 0 %}
+    <td>&nbsp;</td>
+    {% else %}
+    {% if day in highlighted_dates %}
+    <td class="highlight">{{ day }}</td>
+    {% else %}
+    <td>{{ day }}</td>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('history') }}">Back to History</a>
+{% endblock %}
